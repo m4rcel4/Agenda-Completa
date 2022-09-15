@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,8 +40,12 @@
             this.btnDeletar = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
-            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.rbNome = new System.Windows.Forms.RadioButton();
+            this.rbEmail = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgwTabela)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -95,7 +99,7 @@
             // 
             // btnInserir
             // 
-            this.btnInserir.Location = new System.Drawing.Point(90, 162);
+            this.btnInserir.Location = new System.Drawing.Point(0, 17);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(97, 32);
             this.btnInserir.TabIndex = 6;
@@ -106,14 +110,14 @@
             // dgwTabela
             // 
             this.dgwTabela.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgwTabela.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgwTabela.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgwTabela.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwTabela.Location = new System.Drawing.Point(32, 247);
             this.dgwTabela.Name = "dgwTabela";
@@ -123,7 +127,7 @@
             // 
             // btnDeletar
             // 
-            this.btnDeletar.Location = new System.Drawing.Point(202, 162);
+            this.btnDeletar.Location = new System.Drawing.Point(207, 17);
             this.btnDeletar.Name = "btnDeletar";
             this.btnDeletar.Size = new System.Drawing.Size(97, 32);
             this.btnDeletar.TabIndex = 8;
@@ -133,7 +137,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(315, 162);
+            this.btnUpdate.Location = new System.Drawing.Point(417, 17);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(97, 32);
             this.btnUpdate.TabIndex = 9;
@@ -143,32 +147,64 @@
             // 
             // txtPesquisar
             // 
-            this.txtPesquisar.Location = new System.Drawing.Point(236, 24);
+            this.txtPesquisar.Location = new System.Drawing.Point(304, 21);
             this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(208, 20);
+            this.txtPesquisar.Size = new System.Drawing.Size(248, 20);
             this.txtPesquisar.TabIndex = 10;
+            this.txtPesquisar.TextChanged += new System.EventHandler(this.txtPesquisar_TextChanged);
             // 
-            // btnPesquisar
+            // rbNome
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(460, 24);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(92, 20);
-            this.btnPesquisar.TabIndex = 11;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            this.rbNome.AutoSize = true;
+            this.rbNome.Checked = true;
+            this.rbNome.Location = new System.Drawing.Point(315, 47);
+            this.rbNome.Name = "rbNome";
+            this.rbNome.Size = new System.Drawing.Size(117, 17);
+            this.rbNome.TabIndex = 12;
+            this.rbNome.TabStop = true;
+            this.rbNome.Text = "pesquisar por nome";
+            this.rbNome.UseVisualStyleBackColor = true;
+            // 
+            // rbEmail
+            // 
+            this.rbEmail.AutoSize = true;
+            this.rbEmail.Location = new System.Drawing.Point(438, 47);
+            this.rbEmail.Name = "rbEmail";
+            this.rbEmail.Size = new System.Drawing.Size(115, 17);
+            this.rbEmail.TabIndex = 12;
+            this.rbEmail.Text = "pesquisar por email";
+            this.rbEmail.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(239, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Pesquisar :";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnInserir);
+            this.panel1.Controls.Add(this.btnDeletar);
+            this.panel1.Controls.Add(this.btnUpdate);
+            this.panel1.Location = new System.Drawing.Point(35, 164);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(517, 77);
+            this.panel1.TabIndex = 14;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnPesquisar);
+            this.ClientSize = new System.Drawing.Size(599, 450);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.rbEmail);
+            this.Controls.Add(this.rbNome);
             this.Controls.Add(this.txtPesquisar);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnDeletar);
             this.Controls.Add(this.dgwTabela);
-            this.Controls.Add(this.btnInserir);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNome);
@@ -179,6 +215,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgwTabela)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,7 +234,10 @@
         private System.Windows.Forms.Button btnDeletar;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.TextBox txtPesquisar;
-        private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.RadioButton rbNome;
+        private System.Windows.Forms.RadioButton rbEmail;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

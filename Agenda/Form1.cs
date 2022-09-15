@@ -206,7 +206,61 @@ namespace Agenda
                 {
                     cnn.ConnectionString = "server=localhost;database=agenda;uid=root;pwd=;port=3306";
                     cnn.Open();
-                    string sql = "Select * from contatos where nome='" + txtPesquisar.Text + "'";
+                    string sql;
+
+                    
+
+                    if (rbEmail.Checked) { 
+                    sql = "Select * from contatos where email Like'" + txtPesquisar.Text + "%'";
+                    }
+                    else
+                    {
+                    sql = "Select * from contatos where nome Like'" + txtPesquisar.Text + "%'";
+                    }
+                   
+                    
+                   
+
+
+
+                    MySqlCommand cmd = new MySqlCommand(sql, cnn);
+                    cmd.ExecuteNonQuery();
+                    DataTable table = new DataTable();
+                    MySqlDataAdapter adpter = new MySqlDataAdapter(sql, cnn);
+                    adpter.Fill(table);
+                    dgwTabela.DataSource = table;
+
+                    dgwTabela.AutoGenerateColumns = false;
+
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void txtPesquisar_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection cnn = new MySqlConnection())
+                {
+                    cnn.ConnectionString = "server=localhost;database=agenda;uid=root;pwd=;port=3306";
+                    cnn.Open();
+                    string sql;
+
+                    if (rbEmail.Checked)
+                    {
+                        sql = "Select * from contatos where email Like'" + txtPesquisar.Text + "%'";
+                    }
+                    else
+                    {
+                        sql = "Select * from contatos where nome Like'" + txtPesquisar.Text + "%'";
+                    }
+
                     MySqlCommand cmd = new MySqlCommand(sql, cnn);
                     cmd.ExecuteNonQuery();
                     DataTable table = new DataTable();
