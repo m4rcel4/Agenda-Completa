@@ -8,7 +8,7 @@
 
 
 ### Deletando um usuário
-- selecionar o nome
+- selecionando o nome
 <h2 align="center">
   <img src="./images/agenda2.jpg" width="80%">
 </h2>
